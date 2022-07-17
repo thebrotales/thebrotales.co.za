@@ -32,7 +32,7 @@ jobs:
           token: ' ${{ github.token }}'
       
       - name: tmp
-        runs: |
+        run: |
           ls -la
 
       - name: Send out SOS to update
