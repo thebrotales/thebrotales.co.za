@@ -37,7 +37,6 @@ a.navbar-item.is-active {
     border-color: grey;
 }
 
-
 #hero {
     background: rgb(0, 0, 0);
     background: -moz-linear-gradient(0deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.75) 100%);
@@ -46,8 +45,8 @@ a.navbar-item.is-active {
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#000000", endColorstr="#000000", GradientType=1);
 
     &::before {
-        filter: blur(0.15rem);
-        background-image: url({{site.heroimage}});
+        filter: blur(0.00rem);
+        background-image: url("../images/House_PG8.png");
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
@@ -57,8 +56,15 @@ a.navbar-item.is-active {
         bottom: 0px;
         left: 0px;
         position: absolute;
-        opacity: 0.25;
+        opacity: 0.5;
         content: "";
+    }
+    .button {
+        // display: flex;
+        white-space: unset;
+        flex-wrap: wrap;
+        max-width: fit-content;
+        height: auto;
     }
 }
 .title {
@@ -96,7 +102,7 @@ a.navbar-item.is-active {
         margin: auto 0.75vmax;
 
         &:hover {
-            transform: scale(1.10);
+            transform: scale(1.20);
             filter: opacity(0.75);
         }
     }
@@ -347,9 +353,21 @@ a.navbar-item.is-active {
 }
 
 #page-section {
+    .title {
+        margin: 0 0 20px 0 !important;
+        margin-bottom: 8px;
+    }    
     .content {
         ul, ol, blockquote {
             display: inline-block;
+        }
+    }
+    .is-fixed-to-top {
+        margin: unset;
+    }
+    .image {
+        &:hover {
+            transform: scale(1.05);
         }
     }
 }

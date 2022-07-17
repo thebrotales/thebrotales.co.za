@@ -3,18 +3,40 @@
 @import url('https://cdn.jsdelivr.net/npm/bulma@0.8.2/css/bulma.min.css');
 
 @font-face {
-    font-family:"Oliver-Regular";
+    font-family: "Oliver-Regular";
     src: url("Oliver-Regular.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "PumpkinCheesecake";
+    src: url("PumpkinCheesecake.otf") format("truetype");
 }
 
 html,
 body {
-    font-family: 'Oliver-Regular', sans-serif;
+    font-family: "PumpkinCheesecake";
     scroll-behavior: smooth !important;
     transition: all 0.25s ease;
 }
 
-
+title {
+    // for titles and headings
+    font-family: "Oliver-Regular";
+}
+.title-font {
+    // for titles and headings
+    font-family: "Oliver-Regular";
+}
+.content-font {
+    // for website content
+    font-family: "PumpkinCheesecake";
+}
+.remove_link_colour {
+    a, a:hover, a:focus, a:active {
+        color: inherit;
+        text-decoration: underline;
+    }
+}
 
 /* width */
 ::-webkit-scrollbar {
@@ -42,6 +64,7 @@ body {
 
 #navbar {
     .navbar-burger {
+        height: 4rem;
         span:nth-child(2) {
             left: calc(50%);
             width: 8px;
