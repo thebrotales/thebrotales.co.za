@@ -1,15 +1,13 @@
 on:
-  # schedule:
-  #   # * is a special character in YAML so you have to quote this string
-  #   - cron:  '30 5,17 * * *'
+  schedule:
+    - cron:  '0 * * * *'
   push:
-
 
 jobs: 
   check-gh-pages-ip:
     runs-on: ubuntu-latest
     env: 
-      SET_IP: "192.30.252.153"
+      SET_IP: "192.30.252.154"
     steps: 
       - name: Check GitHub API for GitHub Pages IP's
         id: get_current_ip
