@@ -26,10 +26,10 @@ jobs:
         if: ${{ !contains( steps.get_current_ip.outputs.current_ip_addr, env.SET_IP) }}
         uses: actions/checkout@v3
         id: checkout_repo
-        with:
-          repository: '${{ github.repository }}'
-          ref: 'gh-pages'
-          token: ' ${{ github.token }}'
+        # with:
+          # repository: '${{ github.repository }}'
+          # ref: 'gh-pages'
+          # token: ' ${{ github.token }}'
       
       - name: tmp
         run: |
