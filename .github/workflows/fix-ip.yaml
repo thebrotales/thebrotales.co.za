@@ -17,29 +17,33 @@ jobs:
           echo "::set-output name=current_ip_addr::$current_ip_addr"
       
       - name: All happy
-        if:  ${{ contains( steps.get_current_ip.outputs.current_ip_addr , secrets.CURRENT_GITHUB_PAGES_IP) }}
+        if: ${{ contains( steps.get_current_ip.outputs.current_ip_addr , secrets.CURRENT_GITHUB_PAGES_IP) }}
+        id: all_happy
         run: |
           echo "Yea, it works"
-        
+
+      - name: Checkout repo
+        if: ${{ !contains( steps.get_current_ip.outputs.current_ip_addr , secrets.CURRENT_GITHUB_PAGES_IP) }}
+        uses: actions/checkout@v3
+        id: checkout_repo
+        with:
+          repository: '${{ github.repository }}'
+          ref: 'gh-pages'
+          token: ' ${{ github.token }}'
+
       - name: Send out SOS to update
-        if:  ${{ !contains( steps.get_current_ip.outputs.current_ip_addr , secrets.CURRENT_GITHUB_PAGES_IP) }}
+        if: ${{ !contains( steps.get_current_ip.outputs.current_ip_addr , secrets.CURRENT_GITHUB_PAGES_IP) }}
         uses: dawidd6/action-send-mail@v3
-        with: 
-          server_address: smtp.gmail.com
+        id: send_mail
+        with:
+          server_address: "smtp.gmail.com"
           server_port: 465
           username: '${{secrets.MAIL_USERNAME}}'
           password: '${{secrets.MAIL_PASSWORD}}'
-          subject: [TheBROTales] Afrihost/GitHub needs fixing
-          to: dexfitz5@gmail.com
-          from: GitHub Actions Bot # <user@example.com>
+          subject: (TheBROTales) Afrihost/GitHub needs fixing 
+          to: '${{secrets.MAIL_TO_USERNAME}}'
+          from: '${{secrets.MAIL_USERNAME}}'
           secure: true
-          body: IP ranges checker job of ${{ github.run_id}} in ${{github.repository}} failed!
-          html_body: 
-          cc: 
-          bcc: 
-          reply_to: 
-          in_reply_to: 
           ignore_cert: true
-          convert_markdown: true
-          attachments: 
-          priority: low- name: Send mail
+          html_body: file://.github/workflows/email.html
+          priority: low
