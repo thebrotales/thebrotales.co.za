@@ -12,16 +12,31 @@ layout: compress
         <div class="hero-body">
             <div class="container has-text-left" id="page-section">
                 <div class="section">
-                    <h1 class="title is-1 is-uppercase has-text-weight-bold">
+                    <h1 class="title is-1 is-uppercase has-text-weight-bold title-font">
                         {{page.title}}
                     </h1>
-                    <br>
-                    <h1 class="subtitle is-4 is-uppercase has-text-weight-bold">
+                    
+                    <h1 class="subtitle is-3 is-uppercase has-text-weight-bold content-font">
                         {{page.subtitle}}
                     </h1>
                     <hr class="has-background-black">
+                    <br>
                     <div class="content is-marginless">
-                        {{ content }}
+                        {% if page.image == %}
+                            {{ content }}
+                        {% else %}
+                            <div class="columns">
+                                <div class="column is-one-third-desktop is-one-half-tablet is-one-half-mobile">
+                                    <figure class="image is-3x4">
+                                        <img src= "{{ page.image }}">
+                                      </figure>
+                                </div>
+                                <div class="column is-fixed-to-top is-size-3 content-font remove_link_colour">
+                                    {{ content }}
+                                </div>
+                            </div>
+                        {% endif %}
+
                     </div>
                 </div>
             </div>
