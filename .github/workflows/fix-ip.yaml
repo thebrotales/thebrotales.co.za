@@ -1,0 +1,45 @@
+on:
+  schedule:
+    - cron:  '0 * * * *'
+  push:
+
+jobs: 
+  check-gh-pages-ip:
+    runs-on: ubuntu-latest
+    env: 
+      SET_IP: ${{ secrets.AFRIHOST_SET_IP}}
+    steps: 
+      - name: Check GitHub API for GitHub Pages IP's
+        id: get_current_ip
+        run: |
+          current_ip_addr=$(curl https://api.github.com/meta | jq '.pages[0]')
+          echo $current_ip_addr
+          echo "::set-output name=current_ip_addr::$current_ip_addr"
+      
+      - name: All happy
+        if: ${{ contains( steps.get_current_ip.outputs.current_ip_addr, env.SET_IP) }}
+        id: all_happy
+        run: |
+          echo "Still set correctly"
+
+      - name: Checkout repo
+        if: ${{ !contains( steps.get_current_ip.outputs.current_ip_addr, env.SET_IP) }}
+        uses: actions/checkout@v3
+        id: checkout_repo
+
+      - name: Send out SOS to update
+        if: ${{ !contains( steps.get_current_ip.outputs.current_ip_addr, env.SET_IP) }}
+        uses: dawidd6/action-send-mail@v3
+        id: send_mail
+        with:
+          server_address: "smtp.gmail.com"
+          server_port: 465
+          username: '${{ secrets.MAIL_USERNAME }}'
+          password: '${{ secrets.MAIL_PASSWORD }}'
+          subject: (TheBROTales) Afrihost/GitHub needs fixing 
+          to: '${{ secrets.MAIL_TO_USERNAME }}'
+          from: '${{ secrets.MAIL_USERNAME }}'
+          secure: true
+          ignore_cert: true
+          html_body: file://_includes/email.html
+          priority: low
