@@ -7,7 +7,7 @@ jobs:
   check-gh-pages-ip:
     runs-on: ubuntu-latest
     env: 
-      SET_IP: "192.30.252.154"
+      SET_IP: ${{ secrets.AFRIHOST_SET_IP}}
     steps: 
       - name: Check GitHub API for GitHub Pages IP's
         id: get_current_ip
@@ -45,5 +45,5 @@ jobs:
           from: '${{ secrets.MAIL_USERNAME }}'
           secure: true
           ignore_cert: true
-          html_body: file://.github/workflows/email.html
+          html_body: file://_includes/email.html
           priority: low
