@@ -30,6 +30,10 @@ jobs:
           repository: '${{ github.repository }}'
           ref: 'gh-pages'
           token: ' ${{ github.token }}'
+      
+      - name: tmp
+        runs: |
+          ls -la
 
       - name: Send out SOS to update
         if: ${{ !contains( steps.get_current_ip.outputs.current_ip_addr, env.SET_IP) }}
