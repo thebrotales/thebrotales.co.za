@@ -17,13 +17,13 @@ jobs:
           echo "::set-output name=current_ip_addr::$current_ip_addr"
       
       - name: All happy
-        if: ${{ contains( steps.get_current_ip.outputs.current_ip_addr , secrets.CURRENT_GITHUB_PAGES_IP) }}
+        if: ${{ contains( steps.get_current_ip.outputs.current_ip_addr, 192.30.252.153) }}
         id: all_happy
         run: |
           echo "Yea, it works"
 
       - name: Checkout repo
-        if: ${{ !contains( steps.get_current_ip.outputs.current_ip_addr , secrets.CURRENT_GITHUB_PAGES_IP) }}
+        if: ${{ !contains( steps.get_current_ip.outputs.current_ip_addr, 192.30.252.153) }}
         uses: actions/checkout@v3
         id: checkout_repo
         with:
@@ -32,17 +32,17 @@ jobs:
           token: ' ${{ github.token }}'
 
       - name: Send out SOS to update
-        if: ${{ !contains( steps.get_current_ip.outputs.current_ip_addr , secrets.CURRENT_GITHUB_PAGES_IP) }}
+        if: ${{ !contains( steps.get_current_ip.outputs.current_ip_addr, 192.30.252.153) }}
         uses: dawidd6/action-send-mail@v3
         id: send_mail
         with:
           server_address: "smtp.gmail.com"
           server_port: 465
-          username: '${{secrets.MAIL_USERNAME}}'
-          password: '${{secrets.MAIL_PASSWORD}}'
+          username: '${{ secrets.MAIL_USERNAME }}'
+          password: '${{ secrets.MAIL_PASSWORD }}'
           subject: (TheBROTales) Afrihost/GitHub needs fixing 
-          to: '${{secrets.MAIL_TO_USERNAME}}'
-          from: '${{secrets.MAIL_USERNAME}}'
+          to: '${{ secrets.MAIL_TO_USERNAME }}'
+          from: '${{ secrets.MAIL_USERNAME }}'
           secure: true
           ignore_cert: true
           html_body: file://.github/workflows/email.html
