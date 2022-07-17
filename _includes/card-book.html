@@ -1,14 +1,18 @@
 <div class="columns is-centered is-multiline is-mobile">
-    {% for project in site.data.thebrotales %}
+    {% for book in site.data.thebrotales %}
       <div class="column has-text-centered is-paddingless is-marginless is-one-half-widescreen is-one-half-desktop is-one-half-fullhd is-one-half-tablet is-one-half-mobile is-one-half-touch"
         id="project-card">
-        <a href="{{project.link}}" target="_blank">
+        <a href="{{book.link}}" 
+          {% if book.newpage == true %}
+            target="_blank"
+          {% endif %}
+          >
         <div class="has-background-black card">
-          <figure class="image is-3by1" style="background-image: url({{project.image}});">
+          <figure class="image is-3by1" style="background-image: url({{book.image}});">
           </figure>
           <div class="card-content">
-            <h1 class="title has-text-white is-size-4">{{ project.name }}</h1>
-            <p class="has-text-white has-text-weight-light content">{{ project.description | truncate: 80}}</p>
+            <h1 class="title has-text-white is-size-4 title-font">{{ book.name }}</h1>
+            <p class="has-text-white has-text-weight-light content content-font is-size-5">{{ book.description | truncate: 80}}</p>
           </div>
         </div>
         </a>
