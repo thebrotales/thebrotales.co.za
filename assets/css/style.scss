@@ -41,6 +41,10 @@ a.navbar-item.is-active {
     height: 2px;
 }
 
+.image {
+    background-repeat: no-repeat;
+    background-position: center center;
+}
 #hero {
     background: rgb(0, 0, 0);
     background: -moz-linear-gradient(0deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.75) 100%);
