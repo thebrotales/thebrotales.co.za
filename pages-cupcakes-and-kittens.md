@@ -16,4 +16,4 @@ Join them in their *whirlwind* of fun and laughter.
 <br>
 <br>
 <br>
-Purchase options coming soon! In the meantime, [reach out to the author]({{site.url}}{{site.baseurl}}/#contact).
+Purchase options coming soon! In the meantime, [reach out to the author]({{site.url}}{{site.baseurl}}/contact).
