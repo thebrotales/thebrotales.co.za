@@ -14,6 +14,7 @@ Join them in their *whirlwind* of fun and laughter.
 <br>
 <br>
 <br>
-<br>
-<br>
-Purchase options coming soon! In the meantime, [reach out to the author]({{site.url}}{{site.baseurl}}/contact).
+
+You can grab an ebook copy from [Amazon](https://www.amazon.com/dp/B0BHYXKGDG) or [Smashwords](https://www.smashwords.com/books/view/1169867)
+
+For any queries, [reach out to the author]({{site.url}}{{site.baseurl}}/contact).
