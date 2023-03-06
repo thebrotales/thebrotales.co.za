@@ -1,4 +1,8 @@
 - name: The Cupcakes & Kittens
-  image: assets/images/cupcakesandkittens.jpeg
+  image: assets/images/cupcakesandkittens.jpg
   link: pages-cupcakes-and-kittens
   description: The first tale in the series!
+- name: The Guavas are gone
+  image: assets/images/theguavasaregone.jpg
+  link: pages-the-guavas-are-gone
+  description: Something happens to the guavas... what could it be?
