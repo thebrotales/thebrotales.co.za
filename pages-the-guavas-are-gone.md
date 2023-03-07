@@ -14,6 +14,6 @@ Come and see what Bonny, Ronnie and Onnie get up to in the orchard. Something ha
 <br>
 <br>
 
-You can grab an ebook copy from [Smashwords](https://www.smashwords.com/books/view/1354724).
+You can grab an ebook copy from [Amazon](https://www.amazon.com/dp/B0BX9JPJJM) or [Smashwords](https://www.smashwords.com/books/view/1354724).
 
 For any queries, [reach out to the author]({{site.url}}{{site.baseurl}}/contact), and keep an eye out on our socials!
