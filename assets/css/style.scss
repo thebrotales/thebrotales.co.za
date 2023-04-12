@@ -46,11 +46,7 @@ a.navbar-item.is-active {
     background-position: center center;
 }
 #hero {
-    background: rgb(255, 255, 255);
-    background: -moz-linear-gradient(0deg, rgb(125, 125, 125) 0%, rgba(255, 255, 255, 0.75) 100%);
-    background: -webkit-linear-gradient(0deg, rgb(125, 125, 125) 0%, rgba(255, 255, 255, 0.75) 100%);
-    background: linear-gradient(0deg, rgb(125, 125, 125) 0%, rgba(255, 255, 255, 0.75) 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#000000", endColorstr="#000000", GradientType=1);
+    background: rgb(175, 175, 175);
 
     &::before {
         filter: blur(0.00rem);
@@ -77,11 +73,6 @@ a.navbar-item.is-active {
 }
 #hero-newsletter {
     background: rgb(255, 255, 255);
-    background: -moz-linear-gradient(0deg, rgb(125, 125, 125) 0%, rgba(255, 255, 255, 0.75) 100%);
-    background: -webkit-linear-gradient(0deg, rgb(125, 125, 125) 0%, rgba(255, 255, 255, 0.75) 100%);
-    background: linear-gradient(0deg, rgb(125, 125, 125) 0%, rgba(255, 255, 255, 0.75) 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#000000", endColorstr="#000000", GradientType=1);
-
     .button {
         // display: flex;
         white-space: unset;
@@ -115,10 +106,6 @@ a.navbar-item.is-active {
 
 #contact {
     background: rgb(255, 255, 255);
-    background: -moz-linear-gradient(0deg, rgb(125, 125, 125) 0%, rgba(255, 255, 255, 0.75) 100%);
-    background: -webkit-linear-gradient(0deg, rgb(125, 125, 125) 0%, rgba(255, 255, 255, 0.75) 100%);
-    background: linear-gradient(0deg, rgb(125, 125, 125) 0%, rgba(255, 255, 255, 0.75) 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#000000", endColorstr="#000000", GradientType=1);
     #contact-button {
         margin: 0.5rem auto;
         display: flex;
@@ -293,11 +280,6 @@ a.navbar-item.is-active {
 
 #project {
     background: rgb(255, 255, 255);
-    background: -moz-linear-gradient(0deg, rgb(125, 125, 125) 0%, rgba(255, 255, 255, 0.75) 100%);
-    background: -webkit-linear-gradient(0deg, rgb(125, 125, 125) 0%, rgba(255, 255, 255, 0.75) 100%);
-    background: linear-gradient(0deg, rgb(125, 125, 125) 0%, rgba(255, 255, 255, 0.75) 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#000000", endColorstr="#000000", GradientType=1);
-    
     .columns {
         .column {
             border-radius: 0.5rem;
